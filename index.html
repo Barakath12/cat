@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+        }
+        #fact {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        #fact:hover {
+            transform: scale(1.05);
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #6200ea;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #3700b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="fact">Click the button to get a cat fact!</div>
+    <button onclick="generateFact()">Get Random Cat Fact</button>
+
+    <script>
+        const facts = [
+            "Cats have highly sensitive whiskers that can detect changes in their environment, helping them navigate in the dark.",
+            "Cats purr not only when they are happy but also when they are frightened or in pain, as it can have a calming effect.",
+            "Just like human fingerprints, each cat's nose print is unique and can be used to identify them.",
+            "Cats sleep for about 12-16 hours a day, making them one of the sleepiest animals. They are crepuscular, meaning they are most active during dawn and dusk.",
+            "Cats have a wide range of vocalizations, including meows, purrs, hisses, and growls, which they use to communicate with humans and other cats.",
+            "Domestic cats are natural hunters and can run up to 30 miles per hour in short bursts when chasing prey.",
+            "Cats were domesticated around 9,000 years ago in the Near East, primarily for their ability to control rodent populations.",
+            "A cat's tail position can indicate its mood; for example, a raised tail often signifies happiness, while a puffed-up tail indicates fear or aggression.",
+            "Cats spend a significant portion of their day grooming themselves, which helps them regulate body temperature and keep their fur clean.",
+            "Indoor cats typically live longer than outdoor cats, with an average lifespan of 12-15 years, while some can live into their 20s with proper care."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
